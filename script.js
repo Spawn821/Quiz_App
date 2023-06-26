@@ -59,22 +59,32 @@ let questions = [
 
 let currentQuestion = 0;
 
+let rightAnswers = 0;
+
 
 function init() {
-    document.getElementById('numberQuestions').innerHTML = questions.length;
+    document.getElementById('number-questions').innerHTML = questions.length;
     showCurrentQuestion();
 }
 
 
 function showCurrentQuestion() {
-    let question = questions[currentQuestion];
 
-    document.getElementById('currentNumberQuestions').innerHTML = currentQuestion + 1;
-    document.getElementById('card-Title').innerHTML = question['question'];
-    document.getElementById('answer_1').innerHTML = question['answer_1'];
-    document.getElementById('answer_2').innerHTML = question['answer_2'];
-    document.getElementById('answer_3').innerHTML = question['answer_3'];
-    document.getElementById('answer_4').innerHTML = question['answer_4'];
+    if (currentQuestion >= questions.length) {
+        document.getElementById('questioncard').classList.add('d-none')
+        document.getElementById('endscreen').classList.remove('d-none')
+        document.getElementById('number-questions-end').innerHTML = questions.length;
+        document.getElementById('right-answers').innerHTML = rightAnswers;
+    } else {
+        let question = questions[currentQuestion];
+
+        document.getElementById('current-number-questions').innerHTML = currentQuestion + 1;
+        document.getElementById('card-Title').innerHTML = question['question'];
+        document.getElementById('answer_1').innerHTML = question['answer_1'];
+        document.getElementById('answer_2').innerHTML = question['answer_2'];
+        document.getElementById('answer_3').innerHTML = question['answer_3'];
+        document.getElementById('answer_4').innerHTML = question['answer_4'];
+    }
 }
 
 
@@ -85,6 +95,7 @@ function answer(selection) {
 
     if (selectedQuestionNumber == question['right_answer']) {
         document.getElementById(selection).parentNode.classList.add('bg-success');
+        rightAnswers++;
     } else {
         document.getElementById(selection).parentNode.classList.add('bg-danger');
         document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-success');
