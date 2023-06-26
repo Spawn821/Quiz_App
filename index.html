@@ -19,31 +19,33 @@
 
 <body onload="init()">
 
-    <!-- Header -->
-    <nav class="navbar bg-body-tertiary">
-        <div class="container-fluid">
-            <span class="navbar-brand mb-0 h1">Quiz App</span>
-        </div>
-    </nav>
+    <!-- Background -->
+    <div class="background d-flex justify-content-center align-items-center bg-danger-subtle">
 
-    <!-- Maincontainer -->
-    <div class="container">
-
-        <!-- Endscreen after the quiz -->
-        <div class="endscreen bg-danger-subtle fs-3 text-center rounded-circle d-none" id="endscreen">
-            <img src="./img_blue/Group 5.png" alt="">
-            <span class="fw-bold mt-4">COMPLETE<br>HTML QUIZ</span>
-            <span class="mt-5">
-                <b class="text-primary me-5" >YOUR SCORE</b>
-                <b id="right-answers">10</b><b>/</b><b id="number-questions-end">10</b>
-            </span>
-            <button class="btn btn-danger btn-lg fs-3 mt-4">SHARE</button>
-            <a class="text-decoration-none mt-4" href="#">REPLAY</a>
-        </div>
+        <!-- Header -->
+        <nav class="d-flex flex-row">
+            <div class="header-left bg-primary">
+                <img class="mb-5" src="./img_blue/logo 2.png" alt="">
+                <div class="d-flex flex-column">
+                    <a class="text-white-50 fs-1 mt-3" href="#">HTML</a>
+                    <div></div>
+                    <a class="text-white-50 fs-1 mt-3" href="#">CSS</a>
+                    <a class="text-white-50 fs-1 mt-3" href="#">JS</a>
+                    <a class="text-white-50 fs-1 mt-3" href="#">Java</a>
+                </div>
+            </div>
+            <img src="./img_blue/bg b.png" alt="">
+        </nav>
 
         <!-- Questioncard -->
-        <div class="card card_question" id="questioncard">
+        <div class="card card_question d-none" id="questioncard">
             <img src="./img/ideenkonzept-mit-gluehbirne.jpg" class="card-img-top" alt="...">
+
+            <!-- Progress-Bar -->
+            <div class="progress" role="progressbar">
+                <div class="progress-bar" style="width: 0%" id="progress-bar">0%</div>
+            </div>
+
             <div class="card-body">
                 <h5 class="card-title" id="card-Title">Frage</h5>
 
@@ -86,6 +88,18 @@
 
             </div>
 
+        </div>
+
+        <!-- Endscreen after the quiz -->
+        <div class="endscreen bg-danger-subtle fs-3 text-center rounded-circle d-none" id="endscreen">
+            <img src="./img_blue/Group 5.png" alt="">
+            <span class="fw-bold mt-4">COMPLETE<br>HTML QUIZ</span>
+            <span class="mt-5">
+                <b class="text-primary me-5">YOUR SCORE</b>
+                <b id="right-answers">10</b><b>/</b><b id="number-questions-end">10</b>
+            </span>
+            <button class="btn btn-danger btn-lg fs-3 mt-4">SHARE</button>
+            <a class="text-decoration-none mt-4" onclick="replay()">REPLAY</a>
         </div>
 
     </div>

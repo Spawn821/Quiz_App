@@ -71,12 +71,17 @@ function init() {
 function showCurrentQuestion() {
 
     if (currentQuestion >= questions.length) {
+        // Show endscreen
         document.getElementById('questioncard').classList.add('d-none')
         document.getElementById('endscreen').classList.remove('d-none')
         document.getElementById('number-questions-end').innerHTML = questions.length;
         document.getElementById('right-answers').innerHTML = rightAnswers;
     } else {
+        // Show current question
         let question = questions[currentQuestion];
+
+        document.getElementById('progress-bar').innerHTML = `${progressBar()}%`;
+        document.getElementById('progress-bar').style.width = `${progressBar()}%`;
 
         document.getElementById('current-number-questions').innerHTML = currentQuestion + 1;
         document.getElementById('card-Title').innerHTML = question['question'];
@@ -117,4 +122,18 @@ function resetAnswers() {
     for (let i = 1; i <= 4; i++) {
         document.getElementById(`answer_${i}`).parentNode.classList.remove('bg-success', 'bg-danger');
     }
+}
+
+
+function progressBar() {
+    return Math.round((currentQuestion + 1) / questions.length * 100);
+}
+
+
+function replay() {
+    currentQuestion = 0;
+    rightAnswers = 0;
+    document.getElementById('questioncard').classList.remove('d-none')
+    document.getElementById('endscreen').classList.add('d-none')
+    init();
 }

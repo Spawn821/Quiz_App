@@ -1,14 +1,28 @@
 body {
-    background-color: rgb(24,60,232) !important;
+    margin: 0;
 }
 
-/* Maincontainer */
-.container {
-    background-color: rgb(24,60,232) !important;
+/* Background */
+.background {
     min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    min-width: 100vw;
+}
+
+/* Header */
+.header-left {
+    padding-top: 4rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+.header-left a {
+    text-decoration: none;
+    position: relative;
+}
+
+
+.header-left a:hover {
+    position: absolute;
 }
 
 /* Endscreen after the quiz */
@@ -38,6 +52,7 @@ body {
 
 .endscreen a {
     color: rgb(255,78,15);
+    cursor: pointer;
 }
 
 /* Questioncard */
