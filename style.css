@@ -2,17 +2,25 @@ body {
     margin: 0;
 }
 
+
+
 /* Background */
 .background {
     min-height: 100vh;
     min-width: 100vw;
 }
 
+
+
 /* Header */
 .header-left {
-    padding-top: 4rem;
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding-top: 3rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.logo {
+    height: 6rem;
 }
 
 .header-left a {
@@ -20,10 +28,38 @@ body {
     position: relative;
 }
 
+.line {
+    display: none;
+    height: 22px;
+    width: 8px;
+    background-color: white;
+    position: absolute;
+    top: 10px;
+    left: -42px;
+}
 
 .header-left a:hover {
-    position: absolute;
+    color: white !important;
+
+    .line {
+        display: block;
+    }
+
 }
+
+
+
+/* Welcomeimage */
+.welcomeimage {
+    background-image: url(./img_blue/bg\ b.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 35rem;
+    width: 42rem;
+}
+
+
 
 /* Endscreen after the quiz */
 .endscreen {
@@ -46,14 +82,16 @@ body {
 }
 
 .endscreen button {
-    background-color: rgb(255,78,15);
+    background-color: rgb(255, 78, 15);
     width: 16rem;
 }
 
 .endscreen a {
-    color: rgb(255,78,15);
+    color: rgb(255, 78, 15);
     cursor: pointer;
 }
+
+
 
 /* Questioncard */
 .card_question {
@@ -73,6 +111,7 @@ body {
     padding-top: 8px;
 }
 
-.bg-success, .bg-danger {
+.bg-success,
+.bg-danger {
     color: white !important;
 }

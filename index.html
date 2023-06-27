@@ -22,20 +22,36 @@
     <!-- Background -->
     <div class="background d-flex justify-content-center align-items-center bg-danger-subtle">
 
-        <!-- Header -->
-        <nav class="d-flex flex-row">
-            <div class="header-left bg-primary">
-                <img class="mb-5" src="./img_blue/logo 2.png" alt="">
-                <div class="d-flex flex-column">
-                    <a class="text-white-50 fs-1 mt-3" href="#">HTML</a>
-                    <div></div>
-                    <a class="text-white-50 fs-1 mt-3" href="#">CSS</a>
-                    <a class="text-white-50 fs-1 mt-3" href="#">JS</a>
-                    <a class="text-white-50 fs-1 mt-3" href="#">Java</a>
+        <div class="d-flex flex-row">
+            <!-- Header -->
+            <nav class="header-left bg-primary d-flex flex-column align-items-center">
+                <img class="logo" class="mb-5" src="./img_blue/logo 2.png" alt="">
+                <div class="link d-flex flex-column">
+                    <a class="HTML-text text-white-50 fs-3 mt-5" href="#">
+                        HTML
+                        <div class="line"></div>
+                    </a>
+                    <a class="CSS-text text-white-50 fs-3 mt-3" href="#">
+                        CSS
+                        <div class="line"></div>
+                    </a>
+                    <a class="JS-text text-white-50 fs-3 mt-3" href="#">
+                        JS
+                        <div class="line"></div>
+                    </a>
+                    <a class="Java-text text-white-50 fs-3 mt-3" href="#">
+                        Java
+                        <div class="line"></div>
+                    </a>
                 </div>
+            </nav>
+
+            <!-- Welcomeimage -->
+            <div class="welcomeimage d-flex justify-content-center align-items-center text-center fs-3 fw-bold">
+<!--                 <img class="welcomeimage" src="./img_blue/bg b.png" alt=""> -->
+                <span>Welcome to <br> The Awesome HTML QUIZ</span>
             </div>
-            <img src="./img_blue/bg b.png" alt="">
-        </nav>
+        </div>
 
         <!-- Questioncard -->
         <div class="card card_question d-none" id="questioncard">
