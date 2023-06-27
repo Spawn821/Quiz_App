@@ -22,7 +22,14 @@
     <!-- Background -->
     <div class="background d-flex justify-content-center align-items-center bg-danger-subtle">
 
+        <!-- Progress-Bar -->
+        <div class="progress" role="progressbar">
+            <div class="progress-bar" style="width: 0%" id="progress-bar">0%</div>
+        </div>
+
+        <!-- Maincontainer -->
         <div class="d-flex flex-row">
+
             <!-- Header -->
             <nav class="header-left bg-primary d-flex flex-column align-items-center">
                 <img class="logo" class="mb-5" src="./img_blue/logo 2.png" alt="">
@@ -47,59 +54,70 @@
             </nav>
 
             <!-- Welcomeimage -->
-            <div class="welcomeimage d-flex justify-content-center align-items-center text-center fs-3 fw-bold">
-<!--                 <img class="welcomeimage" src="./img_blue/bg b.png" alt=""> -->
+            <div
+                class="d-none right-site welcomeimage d-flex justify-content-center align-items-center text-center fs-3 fw-bold">
                 <span>Welcome to <br> The Awesome HTML QUIZ</span>
             </div>
-        </div>
 
-        <!-- Questioncard -->
-        <div class="card card_question d-none" id="questioncard">
-            <img src="./img/ideenkonzept-mit-gluehbirne.jpg" class="card-img-top" alt="...">
+            <!-- Questioncard -->
+            <div class="d-flex flex-column align-items-center justify-content-between right-site bg-light pt-5 pb-3"
+                id="questioncard">
 
-            <!-- Progress-Bar -->
-            <div class="progress" role="progressbar">
-                <div class="progress-bar" style="width: 0%" id="progress-bar">0%</div>
-            </div>
+                <h5 class="card-title fw-bold fs-3 text-center" id="card-Title">Frage</h5>
 
-            <div class="card-body">
-                <h5 class="card-title" id="card-Title">Frage</h5>
+                <div class="card-body d-flex flex-column align-items-center justify-content-center gap-4 fs-3">
 
-                <!-- Answer 1 -->
-                <div class="card answer-card mb-2" onclick="answer('answer_1')">
-                    <div class="card-body" id="answer_1">
-                        Antwort
+                    <!-- Answers -->
+                    <div>
+
+                        <!-- Answer 1 -->
+                        <div class="card answer-card mb-2 d-flex flex-row align-items-center"
+                            onclick="answer('answer_1')">
+                            <div class="answer-category">A</div>
+                            <div class="card-body" id="answer_1">
+                                Antwort
+                            </div>
+                        </div>
+
+                        <!-- Answer 2 -->
+                        <div class="card answer-card mb-2 d-flex flex-row align-items-center"
+                            onclick="answer('answer_2')">
+                            <div class="answer-category">B</div>
+                            <div class="card-body" id="answer_2">
+                                Antwort
+                            </div>
+                        </div>
+
+                        <!-- Answer 3 -->
+                        <div class="card answer-card mb-2 d-flex flex-row align-items-center"
+                            onclick="answer('answer_3')">
+                            <div class="answer-category" id="answer-category">C</div>
+                            <div class="card-body" id="answer_3">
+                                Antwort
+                            </div>
+                        </div>
+
+                        <!-- Answer 4 -->
+                        <div class="card answer-card d-flex flex-row align-items-center" onclick="answer('answer_4')">
+                            <div class="answer-category">D</div>
+                            <div class="card-body" id="answer_4">
+                                Antwort
+                            </div>
+                        </div>
+
                     </div>
+
                 </div>
 
-                <!-- Answer 2 -->
-                <div class="card answer-card mb-2" onclick="answer('answer_2')">
-                    <div class="card-body" id="answer_2">
-                        Antwort
+                <!-- Navigatonarrows -->
+                <div class="navigationarrows">
+                    <div onclick="lastQuestion()">
+                        <img class="left-arrow" src="./img/angle-arrow-pointing-to-right.png" alt="">
                     </div>
-                </div>
-
-                <!-- Answer 3 -->
-                <div class="card answer-card mb-2" onclick="answer('answer_3')">
-                    <div class="card-body" id="answer_3">
-                        Antwort
+                    <span class="d-none" id="text-arrow-disabled">Du hast die Frage noch nicht beantwortet!</span>
+                    <div onclick="nextQuestion()">
+                        <img src="./img/angle-arrow-pointing-to-right.png" alt="">
                     </div>
-                </div>
-
-                <!-- Answer 4 -->
-                <div class="card answer-card mb-2" onclick="answer('answer_4')">
-                    <div class="card-body" id="answer_4">
-                        Antwort
-                    </div>
-                </div>
-
-                <!-- Footer questioncard -->
-                <div class="question-footer">
-                    <span>
-                        <b id="current-number-questions">1</b> von <b id="number-questions">5</b> Fragen
-                    </span>
-                    <button class="btn btn-primary" id="next-question" disabled onclick="nextQuestion()">Nächste
-                        Frage</button>
                 </div>
 
             </div>
@@ -107,15 +125,17 @@
         </div>
 
         <!-- Endscreen after the quiz -->
-        <div class="endscreen bg-danger-subtle fs-3 text-center rounded-circle d-none" id="endscreen">
-            <img src="./img_blue/Group 5.png" alt="">
-            <span class="fw-bold mt-4">COMPLETE<br>HTML QUIZ</span>
-            <span class="mt-5">
-                <b class="text-primary me-5">YOUR SCORE</b>
-                <b id="right-answers">10</b><b>/</b><b id="number-questions-end">10</b>
-            </span>
-            <button class="btn btn-danger btn-lg fs-3 mt-4">SHARE</button>
-            <a class="text-decoration-none mt-4" onclick="replay()">REPLAY</a>
+        <div class="d-none right-site d-flex align-items-center justify-content-center bg-light" id="endscreen">
+            <div class="endscreen bg-danger-subtle fs-4 text-center rounded-circle">
+                <img src="./img_blue/Group 5.png" alt="">
+                <span class="fw-bold mt-4">COMPLETE<br>HTML QUIZ</span>
+                <span class="mt-5">
+                    <b class="text-primary me-5">YOUR SCORE</b>
+                    <b id="right-answers">10</b><b>/</b><b id="number-questions-end">10</b>
+                </span>
+                <button class="btn btn-danger btn-lg fs-4 mt-4">SHARE</button>
+                <a class="text-decoration-none mt-4" onclick="replay()">REPLAY</a>
+            </div>
         </div>
 
     </div>

@@ -61,9 +61,11 @@ let currentQuestion = 0;
 
 let rightAnswers = 0;
 
+let arrowDisabled = true;
+
+let evaluationAnswers = [];
 
 function init() {
-    document.getElementById('number-questions').innerHTML = questions.length;
     showCurrentQuestion();
 }
 
@@ -83,7 +85,6 @@ function showCurrentQuestion() {
         document.getElementById('progress-bar').innerHTML = `${progressBar()}%`;
         document.getElementById('progress-bar').style.width = `${progressBar()}%`;
 
-        document.getElementById('current-number-questions').innerHTML = currentQuestion + 1;
         document.getElementById('card-Title').innerHTML = question['question'];
         document.getElementById('answer_1').innerHTML = question['answer_1'];
         document.getElementById('answer_2').innerHTML = question['answer_2'];
@@ -99,29 +100,63 @@ function answer(selection) {
     let idOfRightAnswer = `answer_${question['right_answer']}`;
 
     if (selectedQuestionNumber == question['right_answer']) {
-        document.getElementById(selection).parentNode.classList.add('bg-success');
-        rightAnswers++;
+        document.getElementById(selection).parentNode.classList.add('bg-green-transparent');
+        document.getElementById(selection).parentElement.children[0].classList.add('bg-green');
+        evaluationAnswers.push({ 'Aufgabe': currentQuestion, 'richtig_falsch': 1 })
     } else {
-        document.getElementById(selection).parentNode.classList.add('bg-danger');
-        document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-success');
+        document.getElementById(selection).parentNode.classList.add('bg-red-transparent');
+        document.getElementById(selection).parentElement.children[0].classList.add('bg-red');
+        document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-green-transparent');
+        document.getElementById(idOfRightAnswer).parentElement.children[0].classList.add('bg-green');
+        evaluationAnswers.push({ 'Aufgabe': currentQuestion, 'richtige_falsch': 0 })
     }
 
-    document.getElementById('next-question').disabled = false;
+    arrowDisabled = false;
 }
 
 
 function nextQuestion() {
-    currentQuestion++;
-    document.getElementById('next-question').disabled = true;
-    resetAnswers();
-    showCurrentQuestion();
+    if (!arrowDisabled) {
+        currentQuestion++;
+        numberRightAswers();
+        resetAnswers();
+        showCurrentQuestion();
+    } else {
+        document.getElementById('text-arrow-disabled').classList.remove('d-none');
+    }
+}
+
+
+function numberRightAswers() {
+    rightAnswers = 0;
+    for (let i = 0; i < evaluationAnswers.length; i++) {
+        let answer = evaluationAnswers[i];
+        if (answer['richtig_falsch'] == 1) {
+            rightAnswers++;
+        }
+    }
+}
+
+
+function lastQuestion() {
+
+    if (currentQuestion >= 1) {
+        currentQuestion--;
+        evaluationAnswers.pop();
+        resetAnswers();
+        showCurrentQuestion();
+    }
 }
 
 
 function resetAnswers() {
     for (let i = 1; i <= 4; i++) {
-        document.getElementById(`answer_${i}`).parentNode.classList.remove('bg-success', 'bg-danger');
+        document.getElementById(`answer_${i}`).parentNode.classList.remove('bg-green-transparent', 'bg-red-transparent');
+        document.getElementById(`answer_${i}`).parentNode.children[0].classList.remove('bg-green', 'bg-red');
     }
+
+    document.getElementById('text-arrow-disabled').classList.add('d-none');
+    arrowDisabled = true;
 }
 
 
