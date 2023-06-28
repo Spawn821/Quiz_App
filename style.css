@@ -76,6 +76,7 @@ body {
 
 .header-left a:hover {
     color: white !important;
+    cursor: pointer;
 
     .line {
         display: block;
@@ -100,7 +101,7 @@ body {
     border-radius: 0 !important;
     border: none !important;
     width: 30rem;
-    gap: 32px;
+    gap: 24px;
 }
 
 .answer-category {

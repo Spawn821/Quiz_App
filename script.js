@@ -111,4 +111,5 @@ function replay() {
     document.getElementById('endscreen').classList.add('d-none')
 
     showCurrentQuestion();
+    resetAnswers();
 }
