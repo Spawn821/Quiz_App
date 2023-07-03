@@ -96,6 +96,11 @@
         font-size: 16px;
     }
 
+    /* Welcomeimage */
+    .welcomeimage {
+        font-size: 16px;
+    }
+
     /* Questioncard */
     h5 {
         font-size: 16px !important;
@@ -122,5 +127,9 @@
 
     .endscreen button {
         font-size: 16px;
+    }
+
+    .test::after {
+        content: 'test';
     }
 }

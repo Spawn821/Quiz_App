@@ -237,13 +237,19 @@ let questionsJava = [
 let questions = [];
 
 
-function loadQuestions(list) {
+function loadQuestions(list, languageName) {
+
+    console.log(languageName);
+
     questions = [];
     for (let i = 0; i < list.length; i++) {
         questions.push(list[i]);
     }
 
     document.getElementById('welcomeimage').classList.add('d-none')
+    document.getElementById('completeText').innerHTML = /*html*/`
+    COMPLETE <br> ${languageName.toUpperCase()} QUIZ
+    `;
 
     replay();
 }

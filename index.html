@@ -32,19 +32,19 @@
             <nav class="header-left bg-primary align-items-center">
                 <img class="logo" class="mb-5" src="./img_blue/logo 2.png" alt="">
                 <div class="link header-left-subcontainer">
-                    <a class="HTML-text text-white-50 mt-5" onclick="loadQuestions(questionsHTML)">
+                    <a class="HTML-text text-white-50 mt-5" onclick="loadQuestions(questionsHTML, 'HTML')">
                         HTML
                         <div class="line"></div>
                     </a>
-                    <a class="CSS-text text-white-50 mt-3" onclick="loadQuestions(questionsCSS)">
+                    <a class="CSS-text text-white-50 mt-3" onclick="loadQuestions(questionsCSS, 'CSS')">
                         CSS
                         <div class="line"></div>
                     </a>
-                    <a class="JS-text text-white-50 mt-3" onclick="loadQuestions(questionsJS)">
+                    <a class="JS-text text-white-50 mt-3" onclick="loadQuestions(questionsJS, 'JavaScript')">
                         JS
                         <div class="line"></div>
                     </a>
-                    <a class="Java-text text-white-50 mt-3" onclick="loadQuestions(questionsJava)">
+                    <a class="Java-text text-white-50 mt-3" onclick="loadQuestions(questionsJava, 'Java')">
                         Java
                         <div class="line"></div>
                     </a>
@@ -52,7 +52,7 @@
             </nav>
 
             <!-- Welcomeimage -->
-            <div class="d-none right-site welcomeimage d-flex justify-content-center align-items-center text-center fs-3 fw-bold"
+            <div class="d-none right-site welcomeimage d-flex justify-content-center align-items-center text-center fw-bold"
                 id="welcomeimage">
                 <span>Welcome to <br> The Awesome HTML QUIZ</span>
             </div>
@@ -129,7 +129,7 @@
             <div class="d-none right-site d-flex align-items-center justify-content-center bg-light" id="endscreen">
                 <div class="endscreen bg-danger-subtle text-center">
                     <img src="./img_blue/Group 5.png" alt="">
-                    <span class="fw-bold mt-4">COMPLETE<br>HTML QUIZ</span>
+                    <span class="fw-bold mt-4" id="completeText">COMPLETE<br class="test">HTML QUIZ</span>
                     <span class="mt-5">
                         <b class="text-primary me-5">YOUR SCORE</b>
                         <b id="right-answers">10</b><b>/</b><b id="number-questions-end">10</b>
