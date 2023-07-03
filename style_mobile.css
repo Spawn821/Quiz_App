@@ -1,0 +1,126 @@
+@media(max-width: 900px) {
+
+    /* Default Settings */
+    .right-site {
+        height: 35rem !important;
+    }
+
+    /* Maincontainer */
+    .maincontainer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Header */
+    .header-left {
+        display: flex;
+        flex-direction: row;
+        gap: 64px;
+        height: auto;
+        width: 44rem;
+        padding: 0.5rem 2rem;
+        margin-top: 32px;
+    }
+    
+    .header-left-subcontainer {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+
+    .logo {
+        height: 4rem;
+    }
+
+    .line {
+        display: none !important;
+    }
+
+    .header-left a:hover {
+        text-decoration: underline;
+        text-underline-offset: 10px;
+        text-decoration-thickness: 8px;
+    }p9
+}
+
+
+@media(max-width: 750px) {
+
+    /* Default Settings */
+    .right-site {
+        width: 30rem !important;
+    }
+
+    /* Header */
+    .header-left {
+        width: 30rem;
+    }
+
+    /* Questioncard */
+    h5 {
+        font-size: 22px !important;
+    }
+
+    .card {
+        font-size: 22px;
+    }
+
+    /* Endscreen */
+    .endscreen {
+        height: 28rem;
+        width: 28rem;
+    }
+
+    .endscreen img {
+        height: 8rem;
+    }
+}
+
+@media(max-width: 500px) {
+
+    /* Default Settings */
+    .right-site {
+        height: 30rem !important;
+        width: 100vw !important;
+    }
+
+    /* Header */
+    .header-left {
+        width: 100vw;
+        gap: 32px;
+    }
+
+    .header-left-subcontainer {
+        font-size: 16px;
+    }
+
+    /* Questioncard */
+    h5 {
+        font-size: 16px !important;
+    }
+
+    .card {
+        font-size: 16px;
+        width: 100vw;
+    }
+
+    .navigationarrows img {
+        height: 24px;
+    }
+
+    /* Endscreen */
+    .endscreen {
+        border-radius: 0;
+        font-size: 16px;
+    }
+
+    .endscreen img {
+        height: 8rem;
+    }
+
+    .endscreen button {
+        font-size: 16px;
+    }
+}

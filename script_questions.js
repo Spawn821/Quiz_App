@@ -190,7 +190,7 @@ let questionsJava = [
         'answer_2': 'Oracle',
         'answer_3': 'Microsoft',
         'answer_4': 'Apple',
-        'right_answer': 1
+        'right_answer': 2
     },
     {
         'question': 'Welcher Datentyp hat 16 Bit?',

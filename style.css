@@ -3,7 +3,7 @@ body {
 }
 
 
-/* default settings */
+/* Default Settings */
 .right-site {
     height: 37rem !important;
     width: 44rem !important;
@@ -33,7 +33,14 @@ body {
 /* Background */
 .background {
     min-height: 100vh;
-    min-width: 100vw;
+    min-width: 100%;
+}
+
+
+/* Maincontainer */
+.maincontainer {
+    display: flex;
+    flex-direction: row;
 }
 
 
@@ -53,6 +60,14 @@ body {
     padding-left: 2rem;
     padding-right: 2rem;
     height: 37rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.header-left-subcontainer {
+    display: flex;
+    flex-direction: column;
+    font-size: 27px;
 }
 
 .logo {
@@ -97,11 +112,16 @@ body {
 
 
 /* Questioncard */
+h5 {
+    font-size: 27px !important;
+}
+
 .card {
     border-radius: 0 !important;
     border: none !important;
     width: 30rem;
     gap: 24px;
+    font-size: 27px;
 }
 
 .answer-category {
@@ -170,6 +190,8 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    border-radius: 50%;
+    font-size: 24px;
 }
 
 .endscreen img {
@@ -185,6 +207,7 @@ body {
 .endscreen button {
     background-color: rgb(255, 78, 15);
     width: 16rem;
+    font-size: 24px;
 }
 
 .endscreen a {
